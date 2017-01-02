@@ -1,0 +1,59 @@
+<div class="eqLogic-widget eqLogic NBLabox" style="width: 200px;background-color:#background_color#; padding : 0px; " data-eqLogic_id="#uid#" data-version="dashboard" >
+    <div style="position: absolute;margin-left: 180px; margin-top: 10px;"><i class='fa fa-refresh pull-right cursor refresh' style="margin-top: 3px;margin-right: 5px;" title="Rafraîchir"></i></div>
+    <span style="font-size : 1.5em;text-align:center;">
+        <center><a href="#eqLink#" style="font-size : 1.2em;">#name#</a></center>
+    </span>
+    <span class="cmd cmd-widget" data-cmd_id="#refresh_id#" style="display:none;"></span>
+    <div class="row" style="margin : 4px">
+        <center>
+            <img src="plugins/NBLabox/doc/images/small.png" height="50" width="50">
+            <br/>
+            (#laboxAddr#)
+            <br/>
+            <i id="boxok" title="La Box est accessible" class="fa fa-check tooltips" style="font-size : 3em;color: #00FF00;display:none;" ></i>
+            <i id="boxnok" title="Erreur de connexion" class="fa fa-times tooltips" style="font-size : 3em;color: #FF0000;display:none;"></i>
+        </center>
+        <div id="displayDetails">
+            <table style="font-size : 12px;width:100%">
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>Débit upload<BR/>Débit download</td><td style='text-align: right;'>#laboxupload#Mb/s<br/>#laboxdownload#Mb/s</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>Version matériel</td><td style='text-align: right;'>#laboxhwver#</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>Version logiciel</td><td style='text-align: right;'>#laboxswver#</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>IP publique</td><td style='text-align: right;'>#laboxip#</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>Masque</td><td style='text-align: right;'>#laboxmask#</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>Passerelle</td><td style='text-align: right;'>#laboxgw#</td><td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td><td style='text-align: left;'>DNS 1<BR/>DNS 2</td><td style='text-align: right;'>#laboxdns1#<br/>#laboxdns2#</td><td>&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        if ("#isDisplay#" === "1") {
+            document.getElementById('displayDetails').style.display = 'block';
+        } else {
+            document.getElementById('displayDetails').style.display = 'none';
+        }
+        if ("#laboxetat#" === "normal") {
+            document.getElementById('boxok').style.display = 'block';
+            document.getElementById('boxnok').style.display = 'none';
+        } else {
+            document.getElementById('boxnok').style.display = 'block';
+            document.getElementById('boxok').style.display = 'none';
+        }
+        $('.eqLogic[data-eqLogic_uid=#uid#] .refresh').on('click', function () {
+            jeedom.cmd.execute({id: '#refresh_id#'});
+        });
+    </script>
+</div>

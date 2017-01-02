@@ -1,0 +1,9 @@
+Une fois configuré et installé, créez un objet pour votre box. 
+
+Affichage  : La commande affichage permet de contrôler si une vue compacte ou étendue des données sur la box sont affichées ou pas. Cete commande ne s'applique qu'au mode Desktop. En mode mobile, la vue est uniquement compacte.
+Adresse IP : L'adresse IP de la BOX. Le module vérifie que l'adresse répond à intervalle régulier et affichera soit une coche verte (box ok), soit une croix rouge (box non accessible). Si La box répond, il collecte les données sur sa configuration et les affiche en vue étendue en mode Desktop
+Compte de connexion : Nom de connexion sur la box permettant d'accéder aux réglages complémentaires et notamment aux fonctions comme le reboot. 
+Mot de passe : Mot de passe associé au compte de connexion.
+
+Nota : le Compte et le mot de passe ne sont utilisés que pour une demande de reboot, jeedom se connectera temporairement à la box pour lancer la demande. Cette fonction est en cours de développement et pas enocre opérationnelle.
+ 

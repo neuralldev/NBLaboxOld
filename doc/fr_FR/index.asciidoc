@@ -1,0 +1,13 @@
+:icons:
+== Numericable SFR, surveillance de  LaBOX
+
+=== Description
+Plugin permettant de récupérer les infos sur LaBox de Numericable et de gerer les API JEEDOM pour les lumières et volets roulants
+
+'''
+=== Configuration
+include::partie_1.asciidoc[]
+
+'''
+=== FAQ
+include::faq.asciidoc[]

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+    <id>NBLabox</id>
+    <name>NB LaBox</name>
+    <description>Plugin pour surveiller LaBox numericable</description>
+    <icon>fa fa-television</icon>
+    <licence>BSD</licence>
+    <author>Neurall</author>
+    <installation>Aucun installation requise</installation>
+    <require>2.2</require>
+    <version>1.6</version>
+    <category>multimedia</category>
+</info>

@@ -1,0 +1,34 @@
+<div class="eqLogic-widget eqLogic NBLabox" style="width: 200px;background-color:#background_color#; padding : 0px; " data-eqLogic_id="#uid#" data-version="dashboard" >
+  <div style="position: absolute;margin-left: 180px; margin-top: 10px;"><i class='fa fa-refresh pull-right cursor refresh' style="margin-top: 3px;margin-right: 5px;" title="Rafraîchir"></i></div>
+    <span style="font-size : 1.5em;text-align:center;">
+        <center><a href="#eqLink#" style="font-size : 1.2em;">#name#</a></center>
+    </span>
+      <span class="cmd cmd-widget" data-cmd_id="#refresh_id#" style="display:none;"></span>
+    <div class="row" style="margin : 4px; text-align: center">
+        <table style="font-size : 0.8em;width:100%">
+            <tr>
+                <td>
+            <i id="boxok" title="La Box est accessible" class="fa fa-check tooltips" style="font-size : 3em;color: #00FF00;display:none;" ></i>
+            <i id="boxnok" title="Erreur de connexion" class="fa fa-times tooltips" style="font-size : 3em;color: #FF0000;display:none;"></i>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    #laboxip#
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        if ("#laboxetat#" == "normal") {
+            document.getElementById('boxok').style.display = 'block';
+            document.getElementById('boxnok').style.display = 'none';
+        } else {
+            document.getElementById('boxnok').style.display = 'block';
+            document.getElementById('boxok').style.display = 'none';
+        }
+        $('.eqLogic[data-eqLogic_uid=#uid#] .refresh').on('click', function () {
+            jeedom.cmd.execute({id: '#refresh_id#'});
+        });
+    </script>
+</div>
